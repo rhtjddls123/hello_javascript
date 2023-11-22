@@ -1,5 +1,5 @@
 function yy() {
-    console.log("123");
+  console.log("1234");
 }
 
 console.log(yy.valueOf());
