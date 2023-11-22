@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture</title>
+  </head>
+  <body>
+    <button id="buttonA">Button</button>
+    <button id="buttonB">Button</button>
+    <script>
+      let cnt = 0;
+      window.addEventListener("load", (event) => {
+        const spanA = document.getElementById("buttonA");
+        const spanB = document.getElementById("buttonB");
+        document
+          .getElementById("buttonA")
+          .addEventListener("click", (event) => {
+            cnt++;
+            spanA.innerText = `ButtonA ${cnt}`;
+            // this.textContent = `ButtonA ${cnt}`;
+            // console.log(this.textContent); // (가)
+          });
+
+        document
+          .getElementById("buttonB")
+          .addEventListener("click", function (event) {
+            cnt++;
+            spanB.innerText = `ButtonB ${cnt}`;
+            // event.currentTarget.textContent = `ButtonB ${cnt}`;
+            // console.log(event.currentTarget.textContent); // (가)
+          });
+        console.log("The End"); // (다)
+      });
+    </script>
+  </body>
+</html>
