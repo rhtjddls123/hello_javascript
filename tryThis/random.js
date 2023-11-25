@@ -1,10 +1,9 @@
-// 특정 범위의 난수를 발생시키는 함수를 작성하시오.
-function rand(start, end) {
-  return Math.floor((end - start + 1) * Math.random()) + start;
-}
-//0 <= ?? < 1
-console.log(rand(1, 10)); // 1 ~ 10 사이의 난수
-rand(0, 9); // 0 ~ 9 사이의 난수
-rand(100, 200); // 100 ~ 200 사이의 난수
+import { rand } from "../utils/math-utils.js";
+import assert from "assert";
 
-// 1 ~ 10 사이의 난수를 무수히(1_000_000_000) 발생시켜 분포를 나타내시오. (난수가 과연 고르게 분포될까?!)
+const rand_1_to_10 = rand(1, 10);
+const rand_0_to_9 = rand(0, 9);
+const rand_100_to_200 = rand(100, 200);
+assert.deepStrictEqual(1 <= rand_1_to_10 && rand_1_to_10 <= 10, true);
+assert.deepStrictEqual(0 <= rand_0_to_9 && rand_0_to_9 <= 9, true);
+assert.deepStrictEqual(100 <= rand_100_to_200 && rand_100_to_200 <= 200, true);
